@@ -9,7 +9,7 @@ const jwtMiddleware = async (ctx, next) => {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     // ctx의 state에 토큰이 해석된 결과를 미들웨어 사용 가능하도록 함
     ctx.state.user = {
-      _id: decode._id,
+      _id: decoded._id,
       username: decoded.username,
     };
 
